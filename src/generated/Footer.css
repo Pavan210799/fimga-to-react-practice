@@ -1,0 +1,345 @@
+/* Generated from figma-node.json — no Figma API request */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
+
+.footer {
+  box-sizing: border-box;
+}
+
+.footer-footer-1 {
+  position: relative;
+  box-sizing: border-box;
+  width: 1440px;
+  height: 361px;
+  background: rgba(47, 205, 112, 0.05);
+}
+
+.footer-sitemap-2 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  position: absolute;
+  left: 674px;
+  top: 50px;
+  width: 122px;
+  height: 261px;
+}
+
+.footer-pages-3 {
+  box-sizing: border-box;
+  width: 64px;
+  height: 36px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  color: rgb(2, 2, 2);
+  white-space: nowrap;
+}
+
+.footer-frame-39-4 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 122px;
+  height: 195px;
+}
+
+.footer-home-5 {
+  box-sizing: border-box;
+  width: 47px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-features-6 {
+  box-sizing: border-box;
+  width: 68px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-gallery-7 {
+  box-sizing: border-box;
+  width: 56px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-testimonial-8 {
+  box-sizing: border-box;
+  width: 92px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-book-a-meeting-9 {
+  box-sizing: border-box;
+  width: 122px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-landing-10 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  position: absolute;
+  left: 890px;
+  top: 50px;
+  width: 135px;
+  height: 261px;
+}
+
+.footer-useful-links-11 {
+  box-sizing: border-box;
+  width: 135px;
+  height: 36px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  color: rgb(2, 2, 2);
+  white-space: nowrap;
+}
+
+.footer-frame-40-12 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 135px;
+  height: 195px;
+}
+
+.footer-mobile-app-13 {
+  box-sizing: border-box;
+  width: 88px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-our-projects-14 {
+  box-sizing: border-box;
+  width: 97px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-personal-website-15 {
+  box-sizing: border-box;
+  width: 135px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-support-team-16 {
+  box-sizing: border-box;
+  width: 111px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-events-17 {
+  box-sizing: border-box;
+  width: 52px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-utility-18 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  position: absolute;
+  left: 1120px;
+  top: 50px;
+  width: 153px;
+  height: 132px;
+}
+
+.footer-utility-19 {
+  box-sizing: border-box;
+  width: 70px;
+  height: 36px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  color: rgb(2, 2, 2);
+  white-space: nowrap;
+}
+
+.footer-frame-41-20 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 153px;
+  height: 66px;
+}
+
+.footer-faq-21 {
+  box-sizing: border-box;
+  width: 31px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-terms-conditions-22 {
+  box-sizing: border-box;
+  width: 153px;
+  height: 23px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22.63px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-left-section-23 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 71px;
+  top: 36px;
+  width: 327px;
+  height: 275px;
+}
+
+.footer-get-your-dream-job-with-us-24 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 1px;
+  top: 76px;
+  width: 326px;
+  height: 24px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.footer-random-symboles-10-25 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 37.64px;
+  height: 50px;
+  background: rgb(18, 33, 24);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.footer-sosmed-26 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  position: absolute;
+  left: 1px;
+  top: 227px;
+  width: 184px;
+  height: 48px;
+  background: rgb(47, 205, 112);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}

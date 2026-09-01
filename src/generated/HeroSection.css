@@ -1,0 +1,638 @@
+/* Generated from figma-node.json — no Figma API request */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
+
+.hero-section {
+  box-sizing: border-box;
+}
+
+.hero-section-hero-section-1 {
+  position: relative;
+  box-sizing: border-box;
+  width: 1440px;
+  height: 826px;
+}
+
+.hero-section-rectangle-6-2 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1440px;
+  height: 826px;
+  background: rgba(47, 205, 112, 0.05);
+}
+
+.hero-section-group-2-3 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 150px;
+  top: 181px;
+  width: 524px;
+  height: 424px;
+}
+
+.hero-section-group-1-4 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 469px;
+  height: 46px;
+  border-radius: 50px;
+}
+
+.hero-section-rectangle-7-5 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 36px;
+  top: 0px;
+  width: 433px;
+  height: 46px;
+  background: rgba(253, 134, 91, 0.2);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-frame-4-6 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 13px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 85px;
+  height: 46px;
+  background: rgb(253, 134, 91);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-new-7 {
+  box-sizing: border-box;
+  width: 32px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.11px;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+}
+
+.hero-section-stay-connect-with-us-to-get-all-the-notification-about-new-job-8 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 95px;
+  top: 14px;
+  width: 354px;
+  height: 18px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.6px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.hero-section-find-part-time-job-increase-your-skills-9 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 76px;
+  width: 524px;
+  height: 150px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 75.42px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.hero-section-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-imperdiet-tempus-felis-vitae-sit-est-quisque-10 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 246px;
+  width: 374px;
+  height: 52px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.hero-section-rectangle-8-11 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 328px;
+  width: 517px;
+  height: 96px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-rectangle-9-12 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 163px;
+  top: 328px;
+  width: 1px;
+  height: 96px;
+  background: rgba(2, 2, 2, 0.05);
+}
+
+.hero-section-rectangle-10-13 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 312px;
+  top: 328px;
+  width: 1px;
+  height: 96px;
+  background: rgba(2, 2, 2, 0.05);
+}
+
+.hero-section-frame-1-14 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  left: 20px;
+  top: 366px;
+  width: 116px;
+  height: 20px;
+}
+
+.hero-section-search-for-job-15 {
+  box-sizing: border-box;
+  width: 93px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.11px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.hero-section-vuesax-linear-arrow-down-16 {
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-section-frame-5-17 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  left: 191px;
+  top: 366px;
+  width: 94px;
+  height: 20px;
+}
+
+.hero-section-categories-18 {
+  box-sizing: border-box;
+  width: 71px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.11px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.hero-section-vuesax-linear-arrow-down-19 {
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-section-frame-6-20 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  left: 340px;
+  top: 366px;
+  width: 56px;
+  height: 20px;
+}
+
+.hero-section-type-21 {
+  box-sizing: border-box;
+  width: 33px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.11px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.hero-section-vuesax-linear-arrow-down-22 {
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-section-frame-4-23 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 13px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  position: absolute;
+  left: 441px;
+  top: 348px;
+  width: 56px;
+  height: 56px;
+  background: rgb(47, 205, 112);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-group-5-24 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 660px;
+  top: 60px;
+  width: 630px;
+  height: 666px;
+}
+
+.hero-section-group-3-25 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 1px;
+  top: 0px;
+  width: 629px;
+  height: 666px;
+}
+
+.hero-section-ellipse-1-26 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 122px;
+  top: 188px;
+  width: 44px;
+  height: 44px;
+  background: rgb(255, 255, 255);
+}
+
+.hero-section-ellipse-4-27 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 561px;
+  top: 240px;
+  width: 35px;
+  height: 35px;
+  background: rgb(47, 205, 112);
+}
+
+.hero-section-ellipse-2-28 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 30px;
+  top: 481px;
+  width: 29px;
+  height: 29px;
+  background: rgb(47, 205, 112);
+}
+
+.hero-section-ellipse-3-29 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 477px;
+  top: 642px;
+  width: 24px;
+  height: 24px;
+  background: rgb(255, 255, 255);
+}
+
+.hero-section-mask-group-30 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 105px;
+  width: 629px;
+  height: 561px;
+}
+
+.hero-section-design-bda389fe-a71e-45d4-8e16-fee8caeef23d-2-31 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 49px;
+  top: -105px;
+  width: 530px;
+  height: 672px;
+}
+
+.hero-section-design-bda389fe-a71e-45d4-8e16-fee8caeef23d-1-32 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 49px;
+  top: 0px;
+  width: 530px;
+  height: 496px;
+}
+
+.hero-section-rectangle-11-33 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 584px;
+  width: 290px;
+  height: 73px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-group-4-34 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 68px;
+  top: 597px;
+  width: 129px;
+  height: 45px;
+}
+
+.hero-section-congratulation-35 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 107px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.11px;
+  color: rgb(47, 205, 112);
+  white-space: nowrap;
+}
+
+.hero-section-you-have-got-a-mail-36 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 25px;
+  width: 129px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.11px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.hero-section-frame-4-37 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 13px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  position: absolute;
+  left: 15px;
+  top: 599px;
+  width: 43px;
+  height: 43px;
+  background: rgba(253, 134, 91, 0.2);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-frame-5-38 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 13px;
+  padding-right: 20px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  position: absolute;
+  left: 245px;
+  top: 606px;
+  width: 30px;
+  height: 30px;
+  background: rgba(47, 205, 112, 0.2);
+  border-radius: 5px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-rectangle-12-39 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 410px;
+  top: 360px;
+  width: 201px;
+  height: 93px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section-50k-job-holder-get-job-40 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 425px;
+  top: 375px;
+  width: 158px;
+  height: 20px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.11px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.hero-section-ellipse-5-41 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 425px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+}
+
+.hero-section-ellipse-6-42 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 448px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+}
+
+.hero-section-ellipse-7-43 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 471px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+}
+
+.hero-section-ellipse-8-44 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 494px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+}
+
+.hero-section-ellipse-9-45 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 517px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+}
+
+.hero-section-ellipse-10-46 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 540px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+}
+
+.hero-section-ellipse-11-47 {
+  position: relative;
+  box-sizing: border-box;
+  position: absolute;
+  left: 563px;
+  top: 405px;
+  width: 33px;
+  height: 33px;
+  background: rgb(47, 205, 112);
+}
+
+.hero-section-vuesax-linear-add-48 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 571px;
+  top: 413px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}

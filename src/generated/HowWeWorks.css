@@ -1,0 +1,381 @@
+/* Generated from figma-node.json — no Figma API request */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
+
+.how-we-works {
+  box-sizing: border-box;
+}
+
+.how-we-works-how-we-works-1 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 1140px;
+  height: 253px;
+}
+
+.how-we-works-frame-10-2 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 270px;
+  height: 253px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-9-3 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 230px;
+  height: 213px;
+}
+
+.how-we-works-frame-7-4 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(47, 194, 252, 0.1);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-8-5 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 230px;
+  height: 113px;
+}
+
+.how-we-works-create-account-6 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 25px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.14px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.how-we-works-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-imperdiet-tempus-felis-vitae-7 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 78px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.how-we-works-frame-14-8 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 270px;
+  height: 253px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-13-9 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 230px;
+  height: 213px;
+}
+
+.how-we-works-frame-11-10 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(45, 204, 110, 0.1);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-12-11 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 230px;
+  height: 113px;
+}
+
+.how-we-works-search-job-12 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 25px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.14px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.how-we-works-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-imperdiet-tempus-felis-vitae-13 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 78px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.how-we-works-frame-18-14 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 270px;
+  height: 253px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-17-15 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 230px;
+  height: 213px;
+}
+
+.how-we-works-frame-15-16 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(127, 115, 193, 0.1);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-16-17 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 230px;
+  height: 113px;
+}
+
+.how-we-works-upload-resume-18 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 25px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.14px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.how-we-works-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-imperdiet-tempus-felis-vitae-19 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 78px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
+
+.how-we-works-frame-22-20 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 270px;
+  height: 253px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-21-21 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 230px;
+  height: 213px;
+}
+
+.how-we-works-frame-19-22 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  width: 80px;
+  height: 80px;
+  background: rgba(253, 88, 35, 0.1);
+  border-radius: 10px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  border: none;
+  cursor: pointer;
+}
+
+.how-we-works-frame-20-23 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 230px;
+  height: 113px;
+}
+
+.how-we-works-apply-now-24 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 25px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25.14px;
+  color: rgb(18, 33, 24);
+  white-space: nowrap;
+}
+
+.how-we-works-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-imperdiet-tempus-felis-vitae-25 {
+  box-sizing: border-box;
+  width: 230px;
+  height: 78px;
+  margin: 0;
+  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(2, 2, 2, 0.5);
+  white-space: nowrap;
+}
