@@ -1,199 +1,126 @@
+import { useState } from "react";
 import "./SelectYourFavouriteJob.css";
+import arrowRight from "../assets/icons/vuesax-linear-arrow-right.svg";
+import add from "../assets/icons/vuesax-linear-add.svg";
+import tcs from "../assets/icons/company-tcs.svg";
+import facebook from "../assets/icons/company-facebook.svg";
+import dribbble from "../assets/icons/company-dribbble.svg";
+import google from "../assets/icons/company-google.svg";
+import ibm from "../assets/icons/company-ibm.svg";
+import pwc from "../assets/icons/company-pwc.svg";
+import a1 from "../assets/images/ellipse-5-f51f7a51.png";
+import a2 from "../assets/images/ellipse-6-7ed6e64d.png";
+import a3 from "../assets/images/ellipse-7-ffc00c64.png";
+import a4 from "../assets/images/ellipse-8-5d50bca8.png";
+
+const jobs = [
+  { id: 1, company: "TCS, Torantoo", title: "Sr. UI/UX Designer", posted: "3 days ago", logo: tcs },
+  { id: 2, company: "Facebook, London", title: "Sr. UI/UX Designer", posted: "3 days ago", logo: facebook },
+  { id: 3, company: "Dribbble, Canada", title: "Sr. UI/UX Designer", posted: "7 days ago", logo: dribbble },
+  { id: 4, company: "Google, US", title: "Sr. UI/UX Designer", posted: "2 days ago", logo: google },
+  { id: 5, company: "IBM, India", title: "Sr. UI/UX Designer", posted: "3 days ago", logo: ibm },
+  { id: 6, company: "PWC, UAE", title: "Sr. UI/UX Designer", posted: "3 days ago", logo: pwc },
+];
+
+const avatars = [a1, a2, a3, a4];
+
+function BookmarkIcon({ active }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+        stroke={active ? "#2FCD70" : "rgba(2,2,2,0.5)"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17 2.44V12.42C17 14.39 15.59 15.16 13.86 14.12L12.54 13.33C12.24 13.15 11.76 13.15 11.46 13.33L10.14 14.12C8.41 15.15 7 14.39 7 12.42V2.44"
+        fill={active ? "#2FCD70" : "none"}
+        stroke={active ? "#2FCD70" : "rgba(2,2,2,0.5)"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 function SelectYourFavouriteJob() {
+  const [saved, setSaved] = useState([]);
+  const [pulsingId, setPulsingId] = useState(null);
+
+  function toggleSaved(id) {
+    setPulsingId(id);
+    setSaved((current) => (current.includes(id) ? current.filter((jobId) => jobId !== id) : [...current, id]));
+  }
+
   return (
-    <div className="select-your-favourite-job-select-your-favourite-job-1">
-      <div className="select-your-favourite-job-frame-25-2">
-      <span className="select-your-favourite-job-select-your-favourite-job-3">{"Select your favourite job"}</span>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-faucibus-aliquet-in-potenti-lectus-orci-elementum-in-id-cras-sem-cras-rutrum-gravida-massa-tempus-ullamcorper-4">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst. Faucibus aliquet in potenti lectus orci elementum in id cras. Sem cras rutrum gravida massa tempus ullamcorper."}</span>
-    </div>
-      <div className="select-your-favourite-job-frame-35-5">
-      <div className="select-your-favourite-job-frame-33-6">
-      <button className="select-your-favourite-job-1-7" type="button">
-      <div className="select-your-favourite-job-frame-32-8">
-      <div className="select-your-favourite-job-frame-30-9">
-      <span className="select-your-favourite-job-simple-icons-infosys-10" aria-hidden="true"></span>
-      <div className="select-your-favourite-job-frame-29-11">
-      <span className="select-your-favourite-job-tcs-torantoo-12">{"TCS, Torantoo"}</span>
-      <span className="select-your-favourite-job-sr-ui-ux-designer-13">{"Sr. UI/UX Designer"}</span>
-      <span className="select-your-favourite-job-3-days-ago-14">{"3 days ago"}</span>
-    </div>
-      <span className="select-your-favourite-job-vuesax-linear-bookmark-15" aria-hidden="true"></span>
-    </div>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-16">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst."}</span>
-      <div className="select-your-favourite-job-frame-31-17">
-      <div className="select-your-favourite-job-frame-28-18">
-      <span className="select-your-favourite-job-apply-now-19">{"Apply now"}</span>
-      <span className="select-your-favourite-job-vuesax-linear-arrow-right-20" aria-hidden="true"></span>
-    </div>
-      <div className="select-your-favourite-job-group-6-21">
-      <div className="select-your-favourite-job-ellipse-5-22" />
-      <div className="select-your-favourite-job-ellipse-6-23" />
-      <div className="select-your-favourite-job-ellipse-7-24" />
-      <div className="select-your-favourite-job-ellipse-8-25" />
-      <div className="select-your-favourite-job-ellipse-9-26" />
-      <div className="select-your-favourite-job-ellipse-10-27" />
-      <div className="select-your-favourite-job-ellipse-11-28" />
-      <span className="select-your-favourite-job-vuesax-linear-add-29" aria-hidden="true"></span>
-    </div>
-    </div>
-    </div>
-    </button>
-      <button className="select-your-favourite-job-2-30" type="button">
-      <div className="select-your-favourite-job-frame-32-31">
-      <div className="select-your-favourite-job-frame-30-32">
-      <span className="select-your-favourite-job-logos-facebook-33" aria-hidden="true"></span>
-      <div className="select-your-favourite-job-frame-29-34">
-      <span className="select-your-favourite-job-facebook-london-35">{"Facebook, London"}</span>
-      <span className="select-your-favourite-job-sr-ui-ux-designer-36">{"Sr. UI/UX Designer"}</span>
-      <span className="select-your-favourite-job-3-days-ago-37">{"3 days ago"}</span>
-    </div>
-      <span className="select-your-favourite-job-vuesax-linear-bookmark-38" aria-hidden="true"></span>
-    </div>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-39">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst."}</span>
-      <div className="select-your-favourite-job-frame-31-40">
-      <div className="select-your-favourite-job-frame-28-41">
-      <span className="select-your-favourite-job-apply-now-42">{"Apply now"}</span>
-      <span className="select-your-favourite-job-vuesax-linear-arrow-right-43" aria-hidden="true"></span>
-    </div>
-      <div className="select-your-favourite-job-group-6-44">
-      <div className="select-your-favourite-job-ellipse-5-45" />
-      <div className="select-your-favourite-job-ellipse-6-46" />
-      <div className="select-your-favourite-job-ellipse-7-47" />
-      <div className="select-your-favourite-job-ellipse-8-48" />
-      <div className="select-your-favourite-job-ellipse-9-49" />
-      <div className="select-your-favourite-job-ellipse-10-50" />
-      <div className="select-your-favourite-job-ellipse-11-51" />
-      <span className="select-your-favourite-job-vuesax-linear-add-52" aria-hidden="true"></span>
-    </div>
-    </div>
-    </div>
-    </button>
-      <button className="select-your-favourite-job-3-53" type="button">
-      <div className="select-your-favourite-job-frame-32-54">
-      <div className="select-your-favourite-job-frame-30-55">
-      <span className="select-your-favourite-job-logos-dribbble-icon-56" aria-hidden="true"></span>
-      <div className="select-your-favourite-job-frame-29-57">
-      <span className="select-your-favourite-job-dribbble-canada-58">{"Dribbble, Canada"}</span>
-      <span className="select-your-favourite-job-sr-ui-ux-designer-59">{"Sr. UI/UX Designer"}</span>
-      <span className="select-your-favourite-job-7-days-ago-60">{"7 days ago"}</span>
-    </div>
-      <span className="select-your-favourite-job-vuesax-linear-bookmark-61" aria-hidden="true"></span>
-    </div>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-62">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst."}</span>
-      <div className="select-your-favourite-job-frame-31-63">
-      <div className="select-your-favourite-job-frame-28-64">
-      <span className="select-your-favourite-job-apply-now-65">{"Apply now"}</span>
-      <span className="select-your-favourite-job-vuesax-linear-arrow-right-66" aria-hidden="true"></span>
-    </div>
-      <div className="select-your-favourite-job-group-6-67">
-      <div className="select-your-favourite-job-ellipse-5-68" />
-      <div className="select-your-favourite-job-ellipse-6-69" />
-      <div className="select-your-favourite-job-ellipse-7-70" />
-      <div className="select-your-favourite-job-ellipse-8-71" />
-      <div className="select-your-favourite-job-ellipse-9-72" />
-      <div className="select-your-favourite-job-ellipse-10-73" />
-      <div className="select-your-favourite-job-ellipse-11-74" />
-      <span className="select-your-favourite-job-vuesax-linear-add-75" aria-hidden="true"></span>
-    </div>
-    </div>
-    </div>
-    </button>
-    </div>
-      <div className="select-your-favourite-job-frame-34-76">
-      <button className="select-your-favourite-job-4-77" type="button">
-      <div className="select-your-favourite-job-frame-32-78">
-      <div className="select-your-favourite-job-frame-30-79">
-      <span className="select-your-favourite-job-flat-color-icons-google-80" aria-hidden="true"></span>
-      <div className="select-your-favourite-job-frame-29-81">
-      <span className="select-your-favourite-job-google-us-82">{"Google, US"}</span>
-      <span className="select-your-favourite-job-sr-ui-ux-designer-83">{"Sr. UI/UX Designer"}</span>
-      <span className="select-your-favourite-job-2-days-ago-84">{"2 days ago"}</span>
-    </div>
-      <span className="select-your-favourite-job-vuesax-linear-bookmark-85" aria-hidden="true"></span>
-    </div>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-86">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst."}</span>
-      <div className="select-your-favourite-job-frame-31-87">
-      <div className="select-your-favourite-job-frame-28-88">
-      <span className="select-your-favourite-job-apply-now-89">{"Apply now"}</span>
-      <span className="select-your-favourite-job-vuesax-linear-arrow-right-90" aria-hidden="true"></span>
-    </div>
-      <div className="select-your-favourite-job-group-6-91">
-      <div className="select-your-favourite-job-ellipse-5-92" />
-      <div className="select-your-favourite-job-ellipse-6-93" />
-      <div className="select-your-favourite-job-ellipse-7-94" />
-      <div className="select-your-favourite-job-ellipse-8-95" />
-      <div className="select-your-favourite-job-ellipse-9-96" />
-      <div className="select-your-favourite-job-ellipse-10-97" />
-      <div className="select-your-favourite-job-ellipse-11-98" />
-      <span className="select-your-favourite-job-vuesax-linear-add-99" aria-hidden="true"></span>
-    </div>
-    </div>
-    </div>
-    </button>
-      <button className="select-your-favourite-job-5-100" type="button">
-      <div className="select-your-favourite-job-frame-32-101">
-      <div className="select-your-favourite-job-frame-30-102">
-      <span className="select-your-favourite-job-ibm-icon-1-103" aria-hidden="true"></span>
-      <div className="select-your-favourite-job-frame-29-104">
-      <span className="select-your-favourite-job-ibm-india-105">{"IBM, India"}</span>
-      <span className="select-your-favourite-job-sr-ui-ux-designer-106">{"Sr. UI/UX Designer"}</span>
-      <span className="select-your-favourite-job-3-days-ago-107">{"3 days ago"}</span>
-    </div>
-      <span className="select-your-favourite-job-vuesax-linear-bookmark-108" aria-hidden="true"></span>
-    </div>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-109">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst."}</span>
-      <div className="select-your-favourite-job-frame-31-110">
-      <div className="select-your-favourite-job-frame-28-111">
-      <span className="select-your-favourite-job-apply-now-112">{"Apply now"}</span>
-      <span className="select-your-favourite-job-vuesax-linear-arrow-right-113" aria-hidden="true"></span>
-    </div>
-      <div className="select-your-favourite-job-group-6-114">
-      <div className="select-your-favourite-job-ellipse-5-115" />
-      <div className="select-your-favourite-job-ellipse-6-116" />
-      <div className="select-your-favourite-job-ellipse-7-117" />
-      <div className="select-your-favourite-job-ellipse-8-118" />
-      <div className="select-your-favourite-job-ellipse-9-119" />
-      <div className="select-your-favourite-job-ellipse-10-120" />
-      <div className="select-your-favourite-job-ellipse-11-121" />
-      <span className="select-your-favourite-job-vuesax-linear-add-122" aria-hidden="true"></span>
-    </div>
-    </div>
-    </div>
-    </button>
-      <button className="select-your-favourite-job-6-123" type="button">
-      <div className="select-your-favourite-job-frame-32-124">
-      <div className="select-your-favourite-job-frame-30-125">
-      <span className="select-your-favourite-job-simple-icons-infosys-126" aria-hidden="true"></span>
-      <div className="select-your-favourite-job-frame-29-127">
-      <span className="select-your-favourite-job-pwc-uae-128">{"PWC, UAE"}</span>
-      <span className="select-your-favourite-job-sr-ui-ux-designer-129">{"Sr. UI/UX Designer"}</span>
-      <span className="select-your-favourite-job-3-days-ago-130">{"3 days ago"}</span>
-    </div>
-      <span className="select-your-favourite-job-vuesax-linear-bookmark-131" aria-hidden="true"></span>
-    </div>
-      <span className="select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-132">{"Nulla in ornare egestas volutpat egestas commodo justo ridiculus. Vulputate sagittis tincidunt nunc dictumst."}</span>
-      <div className="select-your-favourite-job-frame-31-133">
-      <div className="select-your-favourite-job-frame-28-134">
-      <span className="select-your-favourite-job-apply-now-135">{"Apply now"}</span>
-      <span className="select-your-favourite-job-vuesax-linear-arrow-right-136" aria-hidden="true"></span>
-    </div>
-      <div className="select-your-favourite-job-group-6-137">
-      <div className="select-your-favourite-job-ellipse-5-138" />
-      <div className="select-your-favourite-job-ellipse-6-139" />
-      <div className="select-your-favourite-job-ellipse-7-140" />
-      <div className="select-your-favourite-job-ellipse-8-141" />
-      <div className="select-your-favourite-job-ellipse-9-142" />
-      <div className="select-your-favourite-job-ellipse-10-143" />
-      <div className="select-your-favourite-job-ellipse-11-144" />
-      <span className="select-your-favourite-job-vuesax-linear-add-145" aria-hidden="true"></span>
-    </div>
-    </div>
-    </div>
-    </button>
-    </div>
-    </div>
-    </div>
+    <section className="favourite-job" id="jobs">
+      <div className="section-header">
+        <h2>
+          Select your <span className="text-green">favourite</span> job
+        </h2>
+        <p>
+          Nulla in ornare egestas volutpat egestas commodo justo ridiculus.
+          Vulputate sagittis tincidunt nunc dictumst. Faucibus aliquet in potenti
+          lectus orci elementum in id cras. Sem cras rutrum gravida massa tempus
+          ullamcorper.
+        </p>
+      </div>
+
+      <div className="job-grid">
+        {jobs.map((job) => {
+          const isSaved = saved.includes(job.id);
+          return (
+            <article key={job.id} className={`job-card${isSaved ? " is-saved" : ""}`}>
+              <div className="job-card-header">
+                <img src={job.logo} alt="" className="company-logo" width="47" height="47" />
+                <div className="job-info">
+                  <span className="company-location">{job.company}</span>
+                  <span className="job-title">{job.title}</span>
+                  <span className="job-time">{job.posted}</span>
+                </div>
+                <button
+                  type="button"
+                  className={`bookmark-btn${isSaved ? " is-active" : ""}${pulsingId === job.id ? " is-pulsing" : ""}`}
+                  aria-label={isSaved ? "Unsave job" : "Save job"}
+                  aria-pressed={isSaved}
+                  onClick={() => toggleSaved(job.id)}
+                >
+                  <span
+                    className="bookmark"
+                    onAnimationEnd={() => {
+                      setPulsingId((current) => (current === job.id ? null : current));
+                    }}
+                  >
+                    <BookmarkIcon active={isSaved} />
+                  </span>
+                </button>
+              </div>
+              <p className="job-desc">
+                Nulla in ornare egestas volutpat egestas commodo justo ridiculus.
+                Vulputate sagittis tincidunt nunc dictumst.
+              </p>
+              <div className="job-card-footer">
+                <a href="#apply" className="apply-link">
+                  Apply now
+                  <img src={arrowRight} alt="" width="16" height="16" />
+                </a>
+                <div className="avatar-stack-small">
+                  {avatars.map((src) => (
+                    <img key={src} src={src} alt="" className="avatar-sm" />
+                  ))}
+                  <span className="avatar-add-sm">
+                    <img src={add} alt="" width="14" height="14" />
+                  </span>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 

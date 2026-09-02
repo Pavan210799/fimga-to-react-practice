@@ -1,1677 +1,198 @@
-/* Generated from figma-node.json — no Figma API request */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
-
-.select-your-favourite-job {
-  box-sizing: border-box;
-}
-
-.select-your-favourite-job-select-your-favourite-job-1 {
-  box-sizing: border-box;
+.favourite-job {
+  position: relative;
+  z-index: 1;
+  padding: 100px var(--page-gutter) 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 50px;
-  width: 1140px;
-  height: 866px;
+  overflow: visible;
 }
 
-.select-your-favourite-job-frame-25-2 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+.favourite-job .section-header h2,
+.favourite-job .section-header p {
+  text-align: center;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 30px;
-  width: 1140px;
-  height: 160px;
 }
 
-.select-your-favourite-job-select-your-favourite-job-3 {
-  box-sizing: border-box;
-  width: 1140px;
-  height: 60px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 60px;
-  color: rgb(18, 33, 24);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-faucibus-aliquet-in-potenti-lectus-orci-elementum-in-id-cras-sem-cras-rutrum-gravida-massa-tempus-ullamcorper-4 {
-  box-sizing: border-box;
-  width: 1140px;
-  height: 70px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 35px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-frame-35-5 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 30px;
-  width: 1140px;
-  height: 656px;
-}
-
-.select-your-favourite-job-frame-33-6 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 30px;
-  width: 1140px;
-  height: 313px;
-}
-
-.select-your-favourite-job-1-7 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  width: 360px;
-  height: 313px;
-  background: rgb(255, 255, 255);
+.job-card {
+  position: relative;
+  z-index: 0;
+  min-width: 0;
+  background: #fff;
   border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.select-your-favourite-job-frame-32-8 {
-  box-sizing: border-box;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 300px;
-  height: 253px;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow:
+    0 8.15px 6.52px rgba(0, 0, 0, 0.01),
+    0 50px 100px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 
-.select-your-favourite-job-frame-30-9 {
-  box-sizing: border-box;
+.job-card:hover {
+  z-index: 1;
+  transform: translateY(-6px);
+  box-shadow:
+    0 8.15px 6.52px rgba(0, 0, 0, 0.02),
+    0 24px 48px rgba(0, 0, 0, 0.06),
+    0 50px 100px rgba(0, 0, 0, 0.08);
+}
+
+.job-card-header {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px;
-  width: 300px;
-  height: 75px;
+  gap: 16px;
 }
 
-.select-your-favourite-job-simple-icons-infosys-10 {
-  box-sizing: border-box;
+.company-logo {
   width: 47px;
   height: 47px;
-  background: rgb(0, 117, 202);
+  border-radius: 10px;
+  object-fit: contain;
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
 }
 
-.select-your-favourite-job-frame-29-11 {
-  box-sizing: border-box;
+.job-info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 5px;
-  width: 189px;
-  height: 75px;
+  flex: 1;
+  min-width: 0;
 }
 
-.select-your-favourite-job-tcs-torantoo-12 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+.company-location,
+.job-time {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
   color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
 }
 
-.select-your-favourite-job-sr-ui-ux-designer-13 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 25px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+.job-title {
   font-size: 20px;
   font-weight: 700;
-  line-height: 25.14px;
-  color: rgb(2, 2, 2);
-  white-space: nowrap;
 }
 
-.select-your-favourite-job-3-days-ago-14 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-bookmark-15 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-16 {
-  box-sizing: border-box;
-  width: 300px;
-  height: 105px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 35px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-frame-31-17 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 59px;
-  width: 300px;
-  height: 33px;
-}
-
-.select-your-favourite-job-frame-28-18 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 100px;
-  height: 24px;
-}
-
-.select-your-favourite-job-apply-now-19 {
-  box-sizing: border-box;
-  width: 71px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-arrow-right-20 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-group-6-21 {
-  position: relative;
-  box-sizing: border-box;
-  width: 141px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-5-22 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-6-23 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 18px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-7-24 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 36px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-8-25 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 54px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-9-26 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 72px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-10-27 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 90px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-11-28 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 108px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-  background: rgb(253, 134, 91);
-}
-
-.select-your-favourite-job-vuesax-linear-add-29 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 116px;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-2-30 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  width: 360px;
-  height: 313px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
+.bookmark-btn {
+  background: none;
   border: none;
   cursor: pointer;
-}
-
-.select-your-favourite-job-frame-32-31 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 300px;
-  height: 253px;
-}
-
-.select-your-favourite-job-frame-30-32 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  width: 300px;
-  height: 75px;
-}
-
-.select-your-favourite-job-logos-facebook-33 {
-  box-sizing: border-box;
-  width: 47px;
-  height: 47px;
-  background: rgb(57, 81, 133);
+  padding: 0;
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
 }
 
-.select-your-favourite-job-frame-29-34 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5px;
-  width: 189px;
-  height: 75px;
+.bookmark-btn .bookmark {
+  display: block;
+  transform-origin: center bottom;
 }
 
-.select-your-favourite-job-facebook-london-35 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+.bookmark-btn.is-pulsing .bookmark {
+  animation: bookmark-pop 0.5s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+@keyframes bookmark-pop {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.28) rotate(-14deg);
+  }
+  50% {
+    transform: scale(0.94) rotate(10deg);
+  }
+  75% {
+    transform: scale(1.08) rotate(-4deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.job-desc {
   font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-sr-ui-ux-designer-36 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 25px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 25.14px;
-  color: rgb(2, 2, 2);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-3-days-ago-37 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-bookmark-38 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-39 {
-  box-sizing: border-box;
-  width: 300px;
-  height: 105px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
   line-height: 35px;
   color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
 }
 
-.select-your-favourite-job-frame-31-40 {
-  box-sizing: border-box;
+.job-card-footer {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  gap: 59px;
-  width: 300px;
-  height: 33px;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
 }
 
-.select-your-favourite-job-frame-28-41 {
-  box-sizing: border-box;
+.apply-link {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 100px;
-  height: 24px;
-}
-
-.select-your-favourite-job-apply-now-42 {
-  box-sizing: border-box;
-  width: 71px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-arrow-right-43 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-group-6-44 {
-  position: relative;
-  box-sizing: border-box;
-  width: 141px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-5-45 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-6-46 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 18px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-7-47 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 36px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-8-48 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 54px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-9-49 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 72px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-10-50 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 90px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-11-51 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 108px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-  background: rgb(253, 134, 91);
-}
-
-.select-your-favourite-job-vuesax-linear-add-52 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 116px;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-3-53 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  width: 360px;
-  height: 313px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
+  color: #2fcd70;
+  white-space: nowrap;
 }
 
-.select-your-favourite-job-frame-32-54 {
-  box-sizing: border-box;
+.avatar-stack-small {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  gap: 20px;
-  width: 300px;
-  height: 253px;
-}
-
-.select-your-favourite-job-frame-30-55 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  width: 300px;
-  height: 75px;
-}
-
-.select-your-favourite-job-logos-dribbble-icon-56 {
-  box-sizing: border-box;
-  width: 47px;
-  height: 47px;
-  background: rgb(231, 77, 137);
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
 }
 
-.select-your-favourite-job-frame-29-57 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5px;
-  width: 189px;
-  height: 75px;
-}
-
-.select-your-favourite-job-dribbble-canada-58 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-sr-ui-ux-designer-59 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 25px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 25.14px;
-  color: rgb(2, 2, 2);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-7-days-ago-60 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-bookmark-61 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-62 {
-  box-sizing: border-box;
-  width: 300px;
-  height: 105px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 35px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-frame-31-63 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 59px;
-  width: 300px;
-  height: 33px;
-}
-
-.select-your-favourite-job-frame-28-64 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 100px;
-  height: 24px;
-}
-
-.select-your-favourite-job-apply-now-65 {
-  box-sizing: border-box;
-  width: 71px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-arrow-right-66 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-group-6-67 {
-  position: relative;
-  box-sizing: border-box;
-  width: 141px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-5-68 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+.avatar-sm,
+.avatar-add-sm {
   width: 33px;
   height: 33px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  object-fit: cover;
+  margin-left: -15px;
 }
 
-.select-your-favourite-job-ellipse-6-69 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 18px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
+.avatar-sm:first-child {
+  margin-left: 0;
 }
 
-.select-your-favourite-job-ellipse-7-70 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 36px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
+.avatar-add-sm {
+  background: #fd865b;
+  display: grid;
+  place-items: center;
 }
 
-.select-your-favourite-job-ellipse-8-71 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 54px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-9-72 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 72px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-10-73 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 90px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-11-74 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 108px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-  background: rgb(253, 134, 91);
-}
-
-.select-your-favourite-job-vuesax-linear-add-75 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 116px;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-frame-34-76 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 30px;
-  width: 1140px;
-  height: 313px;
-}
-
-.select-your-favourite-job-4-77 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  width: 360px;
-  height: 313px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.select-your-favourite-job-frame-32-78 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 300px;
-  height: 253px;
-}
-
-.select-your-favourite-job-frame-30-79 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  width: 300px;
-  height: 75px;
-}
-
-.select-your-favourite-job-flat-color-icons-google-80 {
-  box-sizing: border-box;
-  width: 47px;
-  height: 47px;
-  background: rgb(255, 193, 7);
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-frame-29-81 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5px;
-  width: 189px;
-  height: 75px;
-}
-
-.select-your-favourite-job-google-us-82 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-sr-ui-ux-designer-83 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 25px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 25.14px;
-  color: rgb(2, 2, 2);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-2-days-ago-84 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-bookmark-85 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-86 {
-  box-sizing: border-box;
-  width: 300px;
-  height: 105px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 35px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-frame-31-87 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 59px;
-  width: 300px;
-  height: 33px;
-}
-
-.select-your-favourite-job-frame-28-88 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 100px;
-  height: 24px;
-}
-
-.select-your-favourite-job-apply-now-89 {
-  box-sizing: border-box;
-  width: 71px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-arrow-right-90 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-group-6-91 {
-  position: relative;
-  box-sizing: border-box;
-  width: 141px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-5-92 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-6-93 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 18px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-7-94 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 36px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-8-95 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 54px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-9-96 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 72px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-10-97 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 90px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-11-98 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 108px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-  background: rgb(253, 134, 91);
-}
-
-.select-your-favourite-job-vuesax-linear-add-99 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 116px;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-5-100 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  width: 360px;
-  height: 313px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.select-your-favourite-job-frame-32-101 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 300px;
-  height: 253px;
-}
-
-.select-your-favourite-job-frame-30-102 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  width: 300px;
-  height: 75px;
-}
-
-.select-your-favourite-job-ibm-icon-1-103 {
-  box-sizing: border-box;
-  width: 47px;
-  height: 47px;
-  background: rgb(31, 112, 193);
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-frame-29-104 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5px;
-  width: 189px;
-  height: 75px;
-}
-
-.select-your-favourite-job-ibm-india-105 {
-  box-sizing: border-box;
-  width: 67px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-sr-ui-ux-designer-106 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 25px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 25.14px;
-  color: rgb(2, 2, 2);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-3-days-ago-107 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-bookmark-108 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-109 {
-  box-sizing: border-box;
-  width: 300px;
-  height: 105px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 35px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-frame-31-110 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 59px;
-  width: 300px;
-  height: 33px;
-}
-
-.select-your-favourite-job-frame-28-111 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 100px;
-  height: 24px;
-}
-
-.select-your-favourite-job-apply-now-112 {
-  box-sizing: border-box;
-  width: 71px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-arrow-right-113 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-group-6-114 {
-  position: relative;
-  box-sizing: border-box;
-  width: 141px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-5-115 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-6-116 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 18px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-7-117 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 36px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-8-118 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 54px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-9-119 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 72px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-10-120 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 90px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-11-121 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 108px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-  background: rgb(253, 134, 91);
-}
-
-.select-your-favourite-job-vuesax-linear-add-122 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 116px;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-6-123 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  width: 360px;
-  height: 313px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
+@media (max-width: 1024px) {
+  .favourite-job {
+    padding-top: 72px;
+    gap: 32px;
+  }
 
-.select-your-favourite-job-frame-32-124 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 300px;
-  height: 253px;
-}
-
-.select-your-favourite-job-frame-30-125 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 20px;
-  width: 300px;
-  height: 75px;
-}
-
-.select-your-favourite-job-simple-icons-infosys-126 {
-  box-sizing: border-box;
-  width: 47px;
-  height: 47px;
-  background: rgb(230, 105, 162);
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-frame-29-127 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5px;
-  width: 189px;
-  height: 75px;
-}
-
-.select-your-favourite-job-pwc-uae-128 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-sr-ui-ux-designer-129 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 25px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 25.14px;
-  color: rgb(2, 2, 2);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-3-days-ago-130 {
-  box-sizing: border-box;
-  width: 189px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-bookmark-131 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-132 {
-  box-sizing: border-box;
-  width: 300px;
-  height: 105px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 35px;
-  color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
-}
+  .job-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
 
-.select-your-favourite-job-frame-31-133 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 59px;
-  width: 300px;
-  height: 33px;
-}
-
-.select-your-favourite-job-frame-28-134 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5px;
-  width: 100px;
-  height: 24px;
-}
-
-.select-your-favourite-job-apply-now-135 {
-  box-sizing: border-box;
-  width: 71px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.select-your-favourite-job-vuesax-linear-arrow-right-136 {
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.select-your-favourite-job-group-6-137 {
-  position: relative;
-  box-sizing: border-box;
-  width: 141px;
-  height: 33px;
-}
+  .job-card {
+    padding: 20px;
+  }
 
-.select-your-favourite-job-ellipse-5-138 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
+  .job-title {
+    font-size: 18px;
+  }
 }
 
-.select-your-favourite-job-ellipse-6-139 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 18px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
+@media (prefers-reduced-motion: reduce) {
+  .bookmark-btn.is-pulsing .bookmark {
+    animation: none;
+  }
 }
 
-.select-your-favourite-job-ellipse-7-140 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 36px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-8-141 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 54px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-9-142 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 72px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-10-143 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 90px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-}
-
-.select-your-favourite-job-ellipse-11-144 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 108px;
-  top: 0px;
-  width: 33px;
-  height: 33px;
-  background: rgb(253, 134, 91);
-}
+@media (max-width: 700px) {
+  .job-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-.select-your-favourite-job-vuesax-linear-add-145 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 116px;
-  top: 8px;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+  .avatar-stack-small {
+    display: none;
+  }
 }

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Figma to React in VS Code — 3 API calls</title>
+</head>
+<body>
+  <h1>Figma → React in VS Code (3 Figma API calls)</h1>
+
+  <p>Reusable starter for any Figma file. Copy the three scripts into a Vite + React app, fill in .env, and stop after:</p>
+
+  <p><code>node scripts/generate-react.js --all</code></p>
+
+  <p>After that, all layout work is local. Do not call Figma again unless the design file actually changed.</p>
+
+  <h2>Why only 3 API calls?</h2>
+
+  <p>Figma rate-limits tokens. The whole design is downloaded once, then everything else reads files on disk.</p>
+
+  <p><b>1.</b> node scripts/fetch-figma.js<br />
+  API: GET /v1/files/:id/nodes?ids=…<br />
+  Result: figma-node.json (layout, text, colors, sizes)</p>
+
+  <p><b>2.</b> node scripts/download-figma-images.js<br />
+  API: GET /v1/files/:id/images<br />
+  Result: URL map for photo / IMAGE fills</p>
+
+  <p><b>3.</b> same script<br />
+  API: GET /v1/images/:id?format=svg<br />
+  Result: SVG render URLs for unique icons</p>
+
+  <p><b>—</b> PNG/SVG bytes from those URLs<br />
+  Not a Figma API call. Files land in src/assets/</p>
+
+  <p><b>—</b> node scripts/inspect-figma.js<br />
+  No API. Prints sections / colors from JSON</p>
+
+  <p><b>—</b> node scripts/generate-react.js --all<br />
+  No API. Writes src/generated/*.jsx and *.css</p>
+
+  <p>Calls 2 and 3 live in one script so you only run the downloader once.</p>
+
+  <h2>What you change per project</h2>
+
+  <p>Only these values. The script logic stays the same.</p>
+
+  <p><b>.env → FIGMA_TOKEN</b><br />
+  Figma → Settings → Personal access tokens</p>
+
+  <p><b>.env → FIGMA_FILE_ID</b><br />
+  From the URL: figma.com/design/FILE_ID/...</p>
+
+  <p><b>.env → FIGMA_NODE_ID</b><br />
+  URL node-id=2683-6274 becomes 2683:6274 (dash → colon)</p>
+
+  <p><b>download-figma-images.js → ICON_NAME_HINTS</b><br />
+  Extra layer-name words that mean “this is an icon”</p>
+
+  <p><b>generate-react.js → SKIP_SECTION_NAMES</b><br />
+  Decorations you do not want as React pages</p>
+
+  <p><b>generate-react.js → FONT_FAMILY</b><br />
+  Font from inspect / Figma text styles</p>
+
+  <p>Do not put the token in the scripts. Keep it in .env (already gitignored in Vite apps).</p>
+
+  <h2>Steps (stop at generate --all)</h2>
+
+  <p>Run every command from the project root (the folder that contains package.json).</p>
+
+  <h3>1. Create the app in VS Code</h3>
+
+  <p><code>npm create vite@latest my-figma-app -- --template react<br />
+cd my-figma-app<br />
+npm install<br />
+npm install axios dotenv</code></p>
+
+  <p>Optional Tailwind (not required for generate):</p>
+
+  <p><code>npm install tailwindcss @tailwindcss/vite</code></p>
+
+  <h3>2. Create .env at the project root</h3>
+
+  <p>Copy .env.example from this kit, or create .env:</p>
+
+  <p><code>FIGMA_TOKEN=figd_your_token_here<br />
+FIGMA_FILE_ID=tNmHG9JljZSXLiMs0EWjvG<br />
+FIGMA_NODE_ID=2683:6274</code></p>
+
+  <p><b>Node id rule:</b> Figma URL uses a dash; the API uses a colon.</p>
+
+  <p><code>https://www.figma.com/design/FILE_ID/File-Name?node-id=2683-6274<br />
+→ 2683:6274</code></p>
+
+  <p>Click one frame / one page in Figma (not the whole file). Fetching the entire file wastes quota and makes a huge JSON.</p>
+
+  <h3>3. Copy the scripts</h3>
+
+  <p>Copy this kit’s scripts/ folder into your app:</p>
+
+  <p><code>my-figma-app/<br />
+  .env<br />
+  package.json<br />
+  scripts/<br />
+    fetch-figma.js<br />
+    download-figma-images.js<br />
+    generate-react.js<br />
+    inspect-figma.js          (optional, 0 API calls)</code></p>
+
+  <p>Confirm package.json has "type": "module" (Vite React template already does).</p>
+
+  <h3>4. Fetch layout JSON — API call 1 / 3</h3>
+
+  <p><code>node scripts/fetch-figma.js</code></p>
+
+  <p>Success: Saved figma-node.json</p>
+
+  <p><b>Stop.</b> Do not run this again for the same design.</p>
+
+  <p>If it fails: token, file id, or node id is wrong. Fix .env and run once.</p>
+
+  <h3>5. Inspect locally — 0 API calls</h3>
+
+  <p><code>node scripts/inspect-figma.js</code></p>
+
+  <p>Prints the page name and top-level section names (these names are what --all will turn into components).</p>
+
+  <p>One section:</p>
+
+  <p><code>node scripts/inspect-figma.js Header<br />
+node scripts/inspect-figma.js "Hero Section"</code></p>
+
+  <p>Use this to fill SKIP_SECTION_NAMES and ICON_NAME_HINTS before downloading icons.</p>
+
+  <h3>6. Download photos + icons — API calls 2 and 3 / 3</h3>
+
+  <p><code>node scripts/download-figma-images.js</code></p>
+
+  <p>Success: Done. Assets in src/assets/images and src/assets/icons</p>
+
+  <p>Writes:</p>
+  <p>src/assets/images/ — photos (IMAGE fills)<br />
+  src/assets/icons/ — unique SVG icons<br />
+  src/assets/manifest.json — map used by the generator</p>
+
+  <p><b>Stop.</b> Do not run this again unless Figma images changed.</p>
+
+  <p>If icons are missing: add words from those layer names to ICON_NAME_HINTS in download-figma-images.js, then run the downloader once more (that spends 2 more API calls). Prefer getting hints right the first time.</p>
+
+  <h3>7. Generate React — 0 API calls (last required step)</h3>
+
+  <p>Every top-level section:</p>
+
+  <p><code>node scripts/generate-react.js --all</code></p>
+
+  <p>Or one section (name = Figma layer name):</p>
+
+  <p><code>node scripts/generate-react.js Header<br />
+node scripts/generate-react.js "Hero Section"</code></p>
+
+  <p>Writes src/generated/Header.jsx, Header.css, and the same for each section.</p>
+
+  <p>You can re-run generate as many times as you want. It only reads figma-node.json and src/assets/manifest.json.</p>
+
+  <h2>After --all (not required for the 3-call pipeline)</h2>
+
+  <p>Wire generated files into src/App.jsx, run npm run dev, then polish CSS by hand. That uses zero Figma API calls.</p>
+
+  <h2>Do / don’t</h2>
+
+  <p><b>Do</b></p>
+  <p>• Fetch one node (one frame), not the whole file<br />
+  • Keep .env out of git<br />
+  • Re-run generate-react.js freely</p>
+
+  <p><b>Don’t</b></p>
+  <p>• Call Figma from the browser (src/api/figma.js on every refresh)<br />
+  • Re-run fetch-figma.js or download-figma-images.js “to be sure”<br />
+  • Put FIGMA_TOKEN in a script or in chat</p>
+
+  <h2>Troubleshooting</h2>
+
+  <p><b>Missing FIGMA_TOKEN</b><br />
+  .env at project root, names exactly as in .env.example</p>
+
+  <p><b>Node … not in figma-node.json</b><br />
+  FIGMA_NODE_ID must match the id used at fetch time (colon, not dash)</p>
+
+  <p><b>figma-node.json not found</b><br />
+  Run fetch-figma.js first, from the project root</p>
+
+  <p><b>Empty / missing icons</b><br />
+  Extend ICON_NAME_HINTS, then download once</p>
+
+  <p><b>Decorative junk as a page</b><br />
+  Add its Figma name to SKIP_SECTION_NAMES</p>
+
+  <p><b>403 / rate limit</b><br />
+  Stop. Use the JSON already on disk. Wait before any new fetch</p>
+</body>
+</html>

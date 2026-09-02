@@ -1,18 +1,37 @@
+import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 
+dotenv.config();
+
 /**
- * Reads figma-node.json only. Does not call the Figma API.
+ * LOCAL GENERATOR
+ * Reads:
+ *   - figma-node.json          (layout, text, colors)
+ *   - src/assets/manifest.json (downloaded photos + icons)
  *
- * Usage:
+ * Writes React + CSS into src/generated/
+ * Does NOT call the Figma API.
+ *
+ * Run one section:
  *   node scripts/generate-react.js Header
  *   node scripts/generate-react.js "Hero Section"
+ *
+ * Run every real section:
+ *   node scripts/generate-react.js --all
+ *
+ * CHANGE FOR A NEW PROJECT
+ *   .env → FIGMA_NODE_ID
+ *   command-line section name = Figma layer name
  */
 
-const NODE_ID = "2683:6274";
+const NODE_ID = process.env.FIGMA_NODE_ID || "2683:6274";
 const JSON_PATH = "./figma-node.json";
+const MANIFEST_PATH = "./src/assets/manifest.json";
 const OUTPUT_DIR = "./src/generated";
-const sectionName = process.argv[2] || "Header";
+const arg = process.argv[2] || "--all";
+
+const SKIP_SECTION_NAMES = new Set(["titik-titik"]);
 
 const SKIP_TYPES = new Set([
   "VECTOR",
@@ -22,29 +41,22 @@ const SKIP_TYPES = new Set([
   "REGULAR_POLYGON",
 ]);
 
+if (!fs.existsSync(JSON_PATH)) {
+  console.error("figma-node.json not found. Run fetch-figma.js once first.");
+  process.exit(1);
+}
+
 const data = JSON.parse(fs.readFileSync(JSON_PATH, "utf8"));
 const page = data.nodes[NODE_ID]?.document;
 
 if (!page) {
-  console.error("Node not found in figma-node.json");
+  console.error(`Node ${NODE_ID} not found in figma-node.json`);
   process.exit(1);
 }
 
-const section = page.children?.find(
-  (child) => child.name.toLowerCase() === sectionName.toLowerCase()
-);
-
-if (!section) {
-  console.error(`Section "${sectionName}" not found.`);
-  console.error("Available:");
-  page.children?.forEach((child) => console.error(`  - ${child.name}`));
-  process.exit(1);
-}
-
-const componentName = toPascalCase(section.name);
-const cssPrefix = toSlug(section.name);
-const cssRules = [];
-let classCounter = 0;
+const manifest = fs.existsSync(MANIFEST_PATH)
+  ? JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"))
+  : { images: {}, icons: {} };
 
 function toPascalCase(name) {
   const parts = name.replace(/[^a-zA-Z0-9]+/g, " ").trim().split(/\s+/);
@@ -68,7 +80,9 @@ function round(value) {
 }
 
 function fillToCss(fills = []) {
-  const solid = fills.find((fill) => fill.type === "SOLID" && fill.visible !== false && fill.color);
+  const solid = fills.find(
+    (fill) => fill.type === "SOLID" && fill.visible !== false && fill.color
+  );
   if (!solid) return null;
 
   const { r, g, b, a = 1 } = solid.color;
@@ -98,8 +112,59 @@ function alignItems(value) {
   return "flex-start";
 }
 
+function imageRefOf(node) {
+  const fill = (node.fills || []).find(
+    (item) => item.type === "IMAGE" && item.visible !== false && item.imageRef
+  );
+  return fill?.imageRef || null;
+}
+
+function toImportId(filePath, used) {
+  const base = path.basename(filePath, path.extname(filePath));
+  let name = base.replace(/[^a-zA-Z0-9]/g, "_");
+  if (!/^[A-Za-z_]/.test(name)) name = `asset_${name}`;
+  let unique = name;
+  let n = 2;
+  while (used.has(unique)) {
+    unique = `${name}_${n}`;
+    n += 1;
+  }
+  used.add(unique);
+  return unique;
+}
+
+function assetImportPath(diskPath) {
+  // src/assets/icons/foo.svg → ../assets/icons/foo.svg (from src/generated)
+  return diskPath.replace(/^src\//, "../");
+}
+
+function lookupIconByName(name) {
+  if (!name) return null;
+  if (manifest.icons[name]) return manifest.icons[name];
+
+  const wanted = toSlug(name);
+  for (const [iconName, filePath] of Object.entries(manifest.icons)) {
+    if (toSlug(iconName) === wanted) return filePath;
+  }
+
+  return null;
+}
+
+function findIconPath(node) {
+  const own = lookupIconByName(node.name);
+  if (own) return own;
+
+  for (const child of node.children || []) {
+    const nested = findIconPath(child);
+    if (nested) return nested;
+  }
+
+  return null;
+}
+
 function isIconTree(node) {
   if (node.type === "TEXT") return false;
+  if (imageRefOf(node)) return false;
   if (SKIP_TYPES.has(node.type)) return true;
 
   const children = node.children || [];
@@ -110,174 +175,194 @@ function isIconTree(node) {
   return children.every(isIconTree);
 }
 
-function nextClass(node) {
-  classCounter += 1;
-  return `${cssPrefix}-${toSlug(node.name)}-${classCounter}`;
-}
-
-function iconLabel(node) {
-  const name = node.name.toLowerCase();
-  if (name.includes("arrow-down")) return "⌄";
-  if (name.includes("document-upload") || name.includes("upload")) return "↑";
-  return "";
-}
-
-function firstFill(node) {
-  const own = fillToCss(node.fills);
-  if (own) return own;
-  for (const child of node.children || []) {
-    const nested = firstFill(child);
-    if (nested) return nested;
-  }
-  return null;
-}
-
-function buildCss(className, node, { absolute = false, parentBox = null, icon = false } = {}) {
-  const rules = ["  box-sizing: border-box;"];
-  const box = node.absoluteBoundingBox;
-
-  if (node.layoutMode === "HORIZONTAL" || node.layoutMode === "VERTICAL") {
-    rules.push("  display: flex;");
-    rules.push(
-      `  flex-direction: ${node.layoutMode === "VERTICAL" ? "column" : "row"};`
-    );
-    rules.push(`  justify-content: ${justifyContent(node.primaryAxisAlignItems)};`);
-    rules.push(`  align-items: ${alignItems(node.counterAxisAlignItems)};`);
-
-    if (node.itemSpacing) {
-      rules.push(`  gap: ${node.itemSpacing}px;`);
-    }
-
-    if (node.paddingTop) rules.push(`  padding-top: ${node.paddingTop}px;`);
-    if (node.paddingRight) rules.push(`  padding-right: ${node.paddingRight}px;`);
-    if (node.paddingBottom) rules.push(`  padding-bottom: ${node.paddingBottom}px;`);
-    if (node.paddingLeft) rules.push(`  padding-left: ${node.paddingLeft}px;`);
-  }
-
-  if (absolute && parentBox && box) {
-    rules.push("  position: absolute;");
-    rules.push(`  left: ${round(box.x - parentBox.x)}px;`);
-    rules.push(`  top: ${round(box.y - parentBox.y)}px;`);
-  }
-
-  if (box) {
-    rules.push(`  width: ${round(box.width)}px;`);
-    rules.push(`  height: ${round(box.height)}px;`);
-  }
-
-  const background = fillToCss(node.fills);
-  if (background && node.type !== "TEXT") {
-    rules.push(`  background: ${background};`);
-  }
-
-  if (node.cornerRadius) {
-    rules.push(`  border-radius: ${node.cornerRadius}px;`);
-  }
-
-  if (node.type === "TEXT" && node.style) {
-    const color = fillToCss(node.fills) || "#122118";
-    rules.push(`  margin: 0;`);
-    rules.push(`  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;`);
-    rules.push(`  font-size: ${node.style.fontSize}px;`);
-    rules.push(`  font-weight: ${node.style.fontWeight};`);
-    if (node.style.lineHeightPx) {
-      rules.push(`  line-height: ${round(node.style.lineHeightPx)}px;`);
-    }
-    rules.push(`  color: ${color};`);
-    rules.push("  white-space: nowrap;");
-  }
-
-  if (icon) {
-    const iconFill = firstFill(node);
-    if (iconFill && !background) {
-      rules.push(`  background: ${iconFill};`);
-    }
-    rules.push("  flex-shrink: 0;");
-    rules.push("  display: inline-flex;");
-    rules.push("  align-items: center;");
-    rules.push("  justify-content: center;");
-    rules.push("  pointer-events: none;");
-  }
-
-  if (looksLikeButton(node)) {
-    rules.push("  border: none;");
-    rules.push("  cursor: pointer;");
-  }
-
-  cssRules.push(`.${className} {\n${rules.join("\n")}\n}`);
-}
-
-function generateNode(node, parent, { absolute = false } = {}) {
-  if (!node || node.visible === false) return "";
-  if (SKIP_TYPES.has(node.type)) return "";
-
-  if (isIconTree(node)) {
-    const className = nextClass(node);
-    buildCss(className, node, {
-      absolute,
-      parentBox: parent?.absoluteBoundingBox,
-      icon: true,
-    });
-    const label = iconLabel(node);
-    return `<span className="${className}" aria-hidden="true">${label}</span>`;
-  }
-
-  if (node.type === "TEXT") {
-    const className = nextClass(node);
-    buildCss(className, node, {
-      absolute,
-      parentBox: parent?.absoluteBoundingBox,
-    });
-    const text = JSON.stringify(node.characters || "");
-    return `<span className="${className}">{${text}}</span>`;
-  }
-
-  const className = nextClass(node);
-  const hasLayout =
-    node.layoutMode === "HORIZONTAL" || node.layoutMode === "VERTICAL";
-
-  buildCss(className, node, {
-    absolute,
-    parentBox: parent?.absoluteBoundingBox,
-  });
-
-  if (!hasLayout) {
-    cssRules[cssRules.length - 1] = cssRules[cssRules.length - 1].replace(
-      `{`,
-      `{\n  position: relative;`
-    );
-  }
-
-  const childAbsolute = !hasLayout;
-  const children = (node.children || [])
-    .map((child) => generateNode(child, node, { absolute: childAbsolute }))
-    .filter(Boolean)
-    .map((jsx) => `  ${jsx}`)
-    .join("\n");
-
-  const Tag = looksLikeButton(node)
-    ? "button"
-    : node.name.toLowerCase() === "header"
-      ? "header"
-      : "div";
-  const typeAttr = Tag === "button" ? ' type="button"' : "";
-
-  if (!children) {
-    return `<${Tag} className="${className}"${typeAttr} />`;
-  }
-
-  return `<${Tag} className="${className}"${typeAttr}>
-${children}
-</${Tag}>`;
-}
-
 function looksLikeButton(node) {
+  if (imageRefOf(node)) return false;
   return Boolean(node.cornerRadius && fillToCss(node.fills));
 }
 
-const rootJsx = generateNode(section, page, { absolute: false });
+function generateSection(section) {
+  const componentName = toPascalCase(section.name);
+  const cssPrefix = toSlug(section.name);
+  const cssRules = [];
+  const imports = [];
+  const usedImportIds = new Set();
+  let classCounter = 0;
 
-const jsx = `import "./${componentName}.css";
+  function registerAsset(diskPath) {
+    const existing = imports.find((item) => item.diskPath === diskPath);
+    if (existing) return existing.id;
+    const id = toImportId(diskPath, usedImportIds);
+    imports.push({ id, diskPath, importPath: assetImportPath(diskPath) });
+    return id;
+  }
+
+  function nextClass(node) {
+    classCounter += 1;
+    return `${cssPrefix}-${toSlug(node.name)}-${classCounter}`;
+  }
+
+  function buildCss(className, node, { absolute = false, parentBox = null, media = false } = {}) {
+    const rules = ["  box-sizing: border-box;"];
+    const box = node.absoluteBoundingBox;
+
+    if (!media && (node.layoutMode === "HORIZONTAL" || node.layoutMode === "VERTICAL")) {
+      rules.push("  display: flex;");
+      rules.push(
+        `  flex-direction: ${node.layoutMode === "VERTICAL" ? "column" : "row"};`
+      );
+      rules.push(`  justify-content: ${justifyContent(node.primaryAxisAlignItems)};`);
+      rules.push(`  align-items: ${alignItems(node.counterAxisAlignItems)};`);
+
+      if (node.itemSpacing) rules.push(`  gap: ${node.itemSpacing}px;`);
+      if (node.paddingTop) rules.push(`  padding-top: ${node.paddingTop}px;`);
+      if (node.paddingRight) rules.push(`  padding-right: ${node.paddingRight}px;`);
+      if (node.paddingBottom) rules.push(`  padding-bottom: ${node.paddingBottom}px;`);
+      if (node.paddingLeft) rules.push(`  padding-left: ${node.paddingLeft}px;`);
+    }
+
+    if (absolute && parentBox && box) {
+      rules.push("  position: absolute;");
+      rules.push(`  left: ${round(box.x - parentBox.x)}px;`);
+      rules.push(`  top: ${round(box.y - parentBox.y)}px;`);
+    }
+
+    if (box) {
+      rules.push(`  width: ${round(box.width)}px;`);
+      rules.push(`  height: ${round(box.height)}px;`);
+    }
+
+    if (media) {
+      rules.push("  display: block;");
+      rules.push("  object-fit: cover;");
+      rules.push("  flex-shrink: 0;");
+      if (node.type === "ELLIPSE") {
+        rules.push("  border-radius: 50%;");
+      } else if (node.cornerRadius) {
+        rules.push(`  border-radius: ${node.cornerRadius}px;`);
+      }
+    } else {
+      const background = fillToCss(node.fills);
+      if (background && node.type !== "TEXT" && !imageRefOf(node)) {
+        rules.push(`  background: ${background};`);
+      }
+      if (node.cornerRadius) {
+        rules.push(`  border-radius: ${node.cornerRadius}px;`);
+      }
+    }
+
+    if (node.type === "TEXT" && node.style) {
+      const color = fillToCss(node.fills) || "#122118";
+      rules.push("  margin: 0;");
+      rules.push('  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;');
+      rules.push(`  font-size: ${node.style.fontSize}px;`);
+      rules.push(`  font-weight: ${node.style.fontWeight};`);
+      if (node.style.lineHeightPx) {
+        rules.push(`  line-height: ${round(node.style.lineHeightPx)}px;`);
+      }
+      rules.push(`  color: ${color};`);
+      rules.push("  white-space: nowrap;");
+    }
+
+    if (looksLikeButton(node)) {
+      rules.push("  border: none;");
+      rules.push("  cursor: pointer;");
+    }
+
+    cssRules.push(`.${className} {\n${rules.join("\n")}\n}`);
+  }
+
+  function generateNode(node, parent, { absolute = false } = {}) {
+    if (!node || node.visible === false) return "";
+    if (SKIP_TYPES.has(node.type)) return "";
+
+    const photoRef = imageRefOf(node);
+    const photoPath = photoRef ? manifest.images[photoRef] : null;
+
+    if (photoPath) {
+      const className = nextClass(node);
+      const importId = registerAsset(photoPath);
+      buildCss(className, node, {
+        absolute,
+        parentBox: parent?.absoluteBoundingBox,
+        media: true,
+      });
+      return `<img className="${className}" src={${importId}} alt="" />`;
+    }
+
+    if (isIconTree(node)) {
+      const iconPath = findIconPath(node);
+      const className = nextClass(node);
+      buildCss(className, node, {
+        absolute,
+        parentBox: parent?.absoluteBoundingBox,
+        media: Boolean(iconPath),
+      });
+
+      if (iconPath) {
+        const importId = registerAsset(iconPath);
+        return `<img className="${className}" src={${importId}} alt="" />`;
+      }
+
+      return `<span className="${className}" aria-hidden="true" />`;
+    }
+
+    if (node.type === "TEXT") {
+      const className = nextClass(node);
+      buildCss(className, node, {
+        absolute,
+        parentBox: parent?.absoluteBoundingBox,
+      });
+      const text = JSON.stringify(node.characters || "");
+      return `<span className="${className}">{${text}}</span>`;
+    }
+
+    const className = nextClass(node);
+    const hasLayout =
+      node.layoutMode === "HORIZONTAL" || node.layoutMode === "VERTICAL";
+
+    buildCss(className, node, {
+      absolute,
+      parentBox: parent?.absoluteBoundingBox,
+    });
+
+    if (!hasLayout) {
+      cssRules[cssRules.length - 1] = cssRules[cssRules.length - 1].replace(
+        `{`,
+        `{\n  position: relative;`
+      );
+    }
+
+    const childAbsolute = !hasLayout;
+    const children = (node.children || [])
+      .map((child) => generateNode(child, node, { absolute: childAbsolute }))
+      .filter(Boolean)
+      .map((jsx) => `  ${jsx}`)
+      .join("\n");
+
+    const Tag = looksLikeButton(node)
+      ? "button"
+      : node.name.toLowerCase() === "header"
+        ? "header"
+        : "div";
+    const typeAttr = Tag === "button" ? ' type="button"' : "";
+
+    if (!children) {
+      return `<${Tag} className="${className}"${typeAttr} />`;
+    }
+
+    return `<${Tag} className="${className}"${typeAttr}>
+${children}
+</${Tag}>`;
+  }
+
+  const rootJsx = generateNode(section, page, { absolute: false });
+
+  const importLines = [
+    `import "./${componentName}.css";`,
+    ...imports.map((item) => `import ${item.id} from "${item.importPath}";`),
+  ].join("\n");
+
+  const jsx = `${importLines}
 
 function ${componentName}() {
   return (
@@ -288,7 +373,7 @@ function ${componentName}() {
 export default ${componentName};
 `;
 
-const css = `/* Generated from figma-node.json — no Figma API request */
+  const css = `/* Generated from figma-node.json + src/assets — no Figma API request */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
 
 .${cssPrefix} {
@@ -298,19 +383,47 @@ const css = `/* Generated from figma-node.json — no Figma API request */
 ${cssRules.join("\n\n")}
 `;
 
-fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-fs.writeFileSync(path.join(OUTPUT_DIR, `${componentName}.jsx`), jsx, "utf8");
-fs.writeFileSync(path.join(OUTPUT_DIR, `${componentName}.css`), css, "utf8");
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.writeFileSync(path.join(OUTPUT_DIR, `${componentName}.jsx`), jsx, "utf8");
+  fs.writeFileSync(path.join(OUTPUT_DIR, `${componentName}.css`), css, "utf8");
+
+  console.log(`  ${componentName}.jsx  (${imports.length} assets)`);
+}
+
+function resolveSection(name) {
+  if (page.name.toLowerCase() === name.toLowerCase()) return page;
+  return page.children?.find(
+    (child) => child.name.toLowerCase() === name.toLowerCase()
+  );
+}
+
+const targets =
+  arg === "--all"
+    ? (page.children || []).filter(
+        (child) => !SKIP_SECTION_NAMES.has(child.name.toLowerCase())
+      )
+    : (() => {
+        const section = resolveSection(arg);
+        if (!section) {
+          console.error(`Section "${arg}" not found.`);
+          console.error("Available:");
+          page.children?.forEach((child) => console.error(`  - ${child.name}`));
+          process.exit(1);
+        }
+        return [section];
+      })();
 
 console.log("");
 console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-console.log("FIGMA JSON → REACT (local only)");
+console.log("FIGMA JSON + ASSETS → REACT");
 console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-console.log(`Section: ${section.name}`);
-console.log(`Output: ${OUTPUT_DIR}`);
-console.log(`  ├─ ${componentName}.jsx`);
-console.log(`  └─ ${componentName}.css`);
-console.log("");
 console.log("No Figma API request was made.");
-console.log("Existing figma-node.json was used only.");
+console.log("");
+
+for (const section of targets) {
+  generateSection(section);
+}
+
+console.log("");
+console.log(`Output: ${OUTPUT_DIR}`);
 console.log("");

@@ -10,13 +10,17 @@ import Footer from "./generated/Footer";
 function App() {
   return (
     <>
-      <Header />
+      <div className="header-shell">
+        <Header />
+      </div>
       <HeroSection />
-      <HowWeWorks />
-      <HowToApply />
-      <SelectYourFavouriteJob />
-      <GetJob />
-      <Download />
+      <div className="page">
+        <HowWeWorks />
+        <HowToApply />
+        <SelectYourFavouriteJob />
+        <GetJob />
+        <Download />
+      </div>
       <Footer />
     </>
   );

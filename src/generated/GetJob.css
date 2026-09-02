@@ -1,389 +1,199 @@
-/* Generated from figma-node.json — no Figma API request */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
+.section-dots {
+  --dots-top-gap: 15px;
+  --dots-bottom-gap: -65px;
+  --dot-size: 8px;
+  --dot-gap: 16px;
+  --content-inset: var(--page-gutter);
+  --dots-col-align: 4;
+  --dots-rows-height: calc(8 * var(--dot-size) + 7 * var(--dot-gap));
+  padding-top: var(--dots-top-gap);
+  padding-left: max(16px, calc(var(--content-inset) - var(--dots-col-align) * (var(--dot-size) + var(--dot-gap))));
+  padding-bottom: 0;
+  margin-bottom: calc(var(--dots-bottom-gap) - var(--dots-rows-height));
+  pointer-events: none;
+}
+
+.section-dots-grid {
+  display: grid;
+  grid-template-columns: repeat(8, var(--dot-size));
+  gap: var(--dot-gap);
+  width: fit-content;
+}
+
+.section-dots-grid span {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: #ececec;
+}
 
 .get-job {
-  box-sizing: border-box;
-}
-
-.get-job-get-job-1 {
-  box-sizing: border-box;
+  --dot-size: 8px;
+  --dot-gap: 16px;
+  --dots-rows-height: calc(8 * var(--dot-size) + 7 * var(--dot-gap));
+  padding: var(--dots-rows-height) var(--page-gutter) 64px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
   gap: 64px;
-  width: 1140px;
-  height: 556px;
+  min-width: 0;
+  overflow: visible;
 }
 
-.get-job-frame-37-2 {
-  box-sizing: border-box;
+.get-job-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 30px;
-  width: 560px;
-  height: 437px;
+  min-width: 0;
 }
 
-.get-job-frame-36-3 {
-  box-sizing: border-box;
+.get-job-text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 30px;
   width: 560px;
-  height: 351px;
+  max-width: 100%;
 }
 
-.get-job-55k-job-holder-get-job-4 {
-  box-sizing: border-box;
-  width: 560px;
-  height: 60px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 40px;
+.get-job-text h2 {
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
-  line-height: 60px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
+  line-height: 1.4;
 }
 
-.get-job-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-nec-suspendisse-fermentum-nunc-enim-dignissim-duis-dapibus-ornare-eget-elementum-vel-at-fusce-nibh-et-at-aliquet-nullam-viverra-ac-mauris-cursus-rhoncus-lorem-pellentesque-erat-nisl-fermentum-eu-semper-dis-est-urna-diam-sit-sit-dui-consectetur-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-faucibus-aliquet-in-potenti-lectus-orci-elementum-in-id-cras-sem-cras-rutrum-gravida-massa-tempus-ullamcorper-5 {
-  box-sizing: border-box;
-  width: 560px;
-  height: 261px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+.get-job-text p {
   font-size: 16px;
-  font-weight: 400;
   line-height: 35px;
   color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
 }
 
-.get-job-frame-4-6 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 13px;
-  padding-right: 20px;
-  padding-bottom: 13px;
-  padding-left: 20px;
+.get-job-content .btn-primary {
   width: 173px;
   height: 56px;
-  background: rgb(47, 205, 112);
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
 }
 
-.get-job-explore-more-7 {
-  box-sizing: border-box;
-  width: 87px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(255, 255, 255);
-  white-space: nowrap;
-}
-
-.get-job-images-8 {
+.get-job-images-canvas {
   position: relative;
-  box-sizing: border-box;
-  width: 516px;
-  height: 556px;
+  width: 100%;
+  max-width: 516px;
+  aspect-ratio: 516 / 556;
+  flex-shrink: 0;
+  overflow: visible;
 }
 
-.get-job-image-9 {
-  position: relative;
-  box-sizing: border-box;
+.grid-item {
   position: absolute;
-  left: 0px;
-  top: 134px;
-  width: 140px;
-  height: 140px;
+  top: var(--item-top);
+  left: var(--item-left);
+  width: 27.13%;
+  height: 25.18%;
   border-radius: 16px;
+  overflow: hidden;
 }
 
-.get-job-rectangle-40-10 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(91, 177, 225);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.get-job-rectangle-42-11 {
-  position: relative;
-  box-sizing: border-box;
+.grid-dot {
   position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
+  top: var(--item-top);
+  left: var(--item-left);
+  border-radius: 50%;
+  z-index: 2;
 }
 
-.get-job-image-12 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 188px;
-  top: 40px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
+@keyframes accent-dot-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(12px, -16px, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-10px, 14px, 0) scale(0.94);
+  }
 }
 
-.get-job-rectangle-35-13 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(255, 79, 96);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
+.grid-dot-motion {
+  animation: accent-dot-float 4.6s ease-in-out infinite;
+  will-change: transform;
 }
 
-.get-job-rectangle-43-14 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
+.grid-dot-motion--2 {
+  animation-delay: -1.6s;
 }
 
-.get-job-image-15 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 322px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
+.grid-dot-motion--3 {
+  animation-delay: -3.1s;
 }
 
-.get-job-rectangle-41-16 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(255, 192, 66);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
+.grid-dot-purple {
+  width: 5.43%;
+  aspect-ratio: 1;
+  background: #7b61ff;
 }
 
-.get-job-rectangle-44-17 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
+.grid-dot-orange {
+  width: 6.59%;
+  aspect-ratio: 1;
+  background: #fd5823;
 }
 
-.get-job-image-18 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 188px;
-  top: 228px;
-  width: 140px;
-  height: 141.76px;
-  border-radius: 16px;
+.grid-dot-green {
+  width: 7.75%;
+  aspect-ratio: 1;
+  background: #2fcd70;
 }
 
-.get-job-rectangle-36-19 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(255, 110, 48);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
+@media (max-width: 1024px) {
+  .section-dots {
+    display: none;
+  }
+
+  .grid-dot-motion {
+    animation-duration: 3s;
+  }
+
+  .get-job {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 72px var(--page-gutter) 40px;
+  }
+
+  .get-job-content,
+  .get-job-text {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .get-job-images-canvas {
+    width: min(100%, 460px);
+  }
 }
 
-.get-job-rectangle-45-20 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 1px;
-  width: 140px;
-  height: 140.76px;
-  border-radius: 16px;
+@media (prefers-reduced-motion: reduce) {
+  .grid-dot-motion {
+    animation: none;
+  }
 }
 
-.get-job-image-21 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 376px;
-  top: 134px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
-}
+@media (max-width: 700px) {
+  .section-dots {
+    display: none;
+  }
 
-.get-job-rectangle-38-22 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(203, 90, 242);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
-}
+  .get-job {
+    padding-top: 72px;
+    padding-bottom: 40px;
+  }
 
-.get-job-rectangle-46-23 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
-}
-
-.get-job-image-24 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 376px;
-  top: 322px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
-}
-
-.get-job-rectangle-39-25 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(47, 205, 112);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.get-job-rectangle-47-26 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
-}
-
-.get-job-image-27 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 188px;
-  top: 416px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
-}
-
-.get-job-rectangle-37-28 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  background: rgb(123, 97, 255);
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.get-job-rectangle-48-29 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 140px;
-  height: 140px;
-  border-radius: 16px;
-}
-
-.get-job-ellipse-26-30 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 112px;
-  top: 82px;
-  width: 28px;
-  height: 28px;
-  background: rgb(123, 97, 255);
-}
-
-.get-job-ellipse-28-31 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 126px;
-  top: 512px;
-  width: 34px;
-  height: 34px;
-  background: rgb(253, 88, 35);
-}
-
-.get-job-ellipse-27-32 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 376px;
-  top: 0px;
-  width: 40px;
-  height: 40px;
-  background: rgb(47, 205, 112);
+  .get-job-content .btn-primary {
+    width: 100%;
+    max-width: 220px;
+  }
 }

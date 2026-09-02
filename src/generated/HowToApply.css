@@ -1,129 +1,126 @@
-/* Generated from figma-node.json — no Figma API request */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
-
 .how-to-apply {
-  box-sizing: border-box;
-}
-
-.how-to-apply-how-to-apply-1 {
-  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+  padding: 20px var(--page-gutter) 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   gap: 50px;
-  width: 1140px;
-  height: 417px;
+  overflow: visible;
 }
 
-.how-to-apply-frame-25-2 {
-  box-sizing: border-box;
+.section-header {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   gap: 30px;
-  width: 1140px;
-  height: 271px;
+  width: 100%;
+  min-width: 0;
 }
 
-.how-to-apply-to-learn-more-about-the-application-or-how-to-apply-in-the-job-3 {
-  box-sizing: border-box;
-  width: 1140px;
-  height: 120px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 40px;
+.section-header h2 {
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
-  line-height: 60px;
-  color: rgb(18, 33, 24);
-  white-space: nowrap;
+  line-height: 1.4;
+  text-align: center;
 }
 
-.how-to-apply-lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-nec-suspendisse-fermentum-nunc-enim-dignissim-duis-dapibus-ornare-eget-elementum-vel-at-fusce-nibh-et-at-aliquet-nullam-viverra-ac-mauris-cursus-rhoncus-lorem-pellentesque-erat-nisl-fermentum-eu-semper-dis-est-urna-diam-sit-sit-dui-consectetur-nulla-in-ornare-egestas-volutpat-egestas-commodo-justo-ridiculus-vulputate-sagittis-tincidunt-nunc-dictumst-sem-cras-rutrum-gravida-massa-tempus-ullamcorper-4 {
-  box-sizing: border-box;
-  width: 1140px;
-  height: 121px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+.section-header p {
   font-size: 16px;
-  font-weight: 400;
   line-height: 35px;
+  text-align: center;
   color: rgba(2, 2, 2, 0.5);
-  white-space: nowrap;
 }
 
-.how-to-apply-frame-24-5 {
-  box-sizing: border-box;
+.subscribe-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 20px;
-  padding-right: 30px;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  width: 753px;
-  height: 96px;
-  background: rgb(255, 255, 255);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.how-to-apply-frame-23-6 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
   gap: 20px;
-  width: 693px;
-  height: 56px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 30px;
+  box-shadow:
+    0 8.15px 6.52px rgba(0, 0, 0, 0.01),
+    0 50px 100px rgba(0, 0, 0, 0.04);
+  max-width: 100%;
 }
 
-.how-to-apply-enter-your-email-address-7 {
-  box-sizing: border-box;
+.subscribe-bar input {
   width: 499px;
-  height: 35px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  max-width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 400;
   line-height: 35px;
-  color: rgba(2, 2, 2, 0.2);
-  white-space: nowrap;
+  color: #020202;
+  background: transparent;
 }
 
-.how-to-apply-frame-4-8 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 13px;
-  padding-right: 20px;
-  padding-bottom: 13px;
-  padding-left: 20px;
+.subscribe-bar input::placeholder {
+  color: rgba(2, 2, 2, 0.2);
+}
+
+.subscribe-bar .btn-primary {
   width: 174px;
   height: 56px;
-  background: rgb(47, 205, 112);
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.how-to-apply-subscribe-9 {
-  box-sizing: border-box;
-  width: 67px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(255, 255, 255);
-  white-space: nowrap;
+.subscribe-bar .btn-primary.is-subscribed,
+.subscribe-bar .btn-primary.is-subscribed:disabled {
+  background: #ff4f60;
+  color: #ffffff;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.apply-dots {
+  --dot-size: 8px;
+  --dot-gap: 16px;
+  position: absolute;
+  right: 0;
+  bottom: -72px;
+  display: grid;
+  grid-template-columns: repeat(8, var(--dot-size));
+  gap: var(--dot-gap);
+  width: fit-content;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.apply-dots span {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: rgba(47, 205, 112, 0.35);
+}
+
+@media (max-width: 1024px) {
+  .how-to-apply {
+    padding-top: 72px;
+    gap: 32px;
+  }
+
+  .apply-dots {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .subscribe-bar {
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .subscribe-bar input,
+  .subscribe-bar .btn-primary {
+    width: 100%;
+  }
+
+  .section-header h2 br {
+    display: none;
+  }
 }

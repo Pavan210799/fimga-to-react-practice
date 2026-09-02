@@ -1,160 +1,179 @@
-/* Generated from figma-node.json — no Figma API request */
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
-
 .download {
-  box-sizing: border-box;
+  padding: 120px var(--page-gutter) 0;
+  overflow: visible;
 }
 
-.download-download-1 {
+.download-inner {
   position: relative;
-  box-sizing: border-box;
-  width: 1140px;
-  height: 473px;
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: 420px;
+  background: #2fcd70;
+  border-radius: 20px 20px 0 20px;
+  overflow: visible;
 }
 
-.download-rectangle-26-2 {
+.download-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.22) 1.5px, transparent 1.6px);
+  background-size: 18px 18px;
+  opacity: 0.35;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.download-content {
   position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 60px;
-  width: 1140px;
-  height: 413px;
-  background: rgb(47, 205, 112);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
+  z-index: 2;
+  max-width: 58%;
+  padding: 80px 50px;
 }
 
-.download-mask-group-3 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 60px;
-  width: 1140px;
-  height: 413px;
+.download-content h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+  max-width: 580px;
+  margin-bottom: 40px;
 }
 
-.download-rectangle-27-4 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 1140px;
-  height: 413px;
-  background: rgb(47, 205, 112);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
+.download-content .btn-white {
+  width: 173px;
+  height: 56px;
 }
 
-.download-pattern-5 {
-  box-sizing: border-box;
+.download-phone-wrap {
   position: absolute;
-  left: -78px;
-  top: 0px;
-  width: 1296px;
-  height: 569.87px;
-  border-radius: 1344.946533203125px;
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  right: 0;
+  top: -90px;
+  bottom: 0;
+  width: 42%;
+  z-index: 3;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.download-ellipse-40-6 {
-  position: relative;
-  box-sizing: border-box;
+.download-phone {
+  width: 100%;
+  height: 118%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@keyframes accent-dot-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(12px, -16px, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-10px, 14px, 0) scale(0.94);
+  }
+}
+
+.download-dot {
   position: absolute;
-  left: 1090px;
-  top: 112px;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.download-dot-motion {
+  animation: accent-dot-float 5s ease-in-out infinite;
+}
+
+.download-dot-motion--2 {
+  animation-delay: -1.7s;
+}
+
+.download-dot-motion--3 {
+  animation-delay: -3.3s;
+}
+
+.download-dot-purple {
   width: 32px;
   height: 32px;
-  background: rgb(123, 97, 255);
+  background: #7b61ff;
+  top: 24px;
+  right: 20px;
 }
 
-.download-ellipse-39-7 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 722px;
-  top: 318px;
+.download-dot-yellow {
   width: 47px;
   height: 47px;
-  background: rgb(255, 192, 66);
+  background: #ffc042;
+  left: 54%;
+  bottom: 48px;
 }
 
-.download-ellipse-37-8 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 1090px;
-  top: 380px;
+.download-dot-red {
   width: 41px;
   height: 41px;
-  background: rgb(255, 79, 96);
+  background: #ff4f60;
+  bottom: 24px;
+  right: 13px;
 }
 
-.download-image-21-9 {
-  position: relative;
-  box-sizing: border-box;
-  position: absolute;
-  left: 733px;
-  top: 0px;
-  width: 407px;
-  height: 473px;
+@media (max-width: 1024px) {
+  .download {
+    padding-top: 96px;
+  }
+
+  .download-inner {
+    min-height: 0;
+  }
+
+  .download-content {
+    max-width: 58%;
+    padding: 40px 32px 36px;
+  }
+
+  .download-content h2 {
+    margin-bottom: 24px;
+    font-size: clamp(24px, 3.4vw, 32px);
+  }
+
+  .download-phone-wrap {
+    width: 40%;
+    top: -56px;
+  }
 }
 
-.download-frame-4-10 {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding-top: 13px;
-  padding-right: 20px;
-  padding-bottom: 13px;
-  padding-left: 20px;
-  position: absolute;
-  left: 50px;
-  top: 317.5px;
-  width: 173px;
-  height: 56px;
-  background: rgb(255, 255, 255);
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+@media (max-width: 700px) {
+  .download {
+    padding-top: 48px;
+  }
+
+  .download-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .download-content {
+    max-width: 100%;
+    padding: 40px 24px;
+  }
+
+  .download-content .btn-white {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .download-phone-wrap {
+    display: none;
+  }
+
+  .download-dot-yellow {
+    display: none;
+  }
 }
 
-.download-download-cv-11 {
-  box-sizing: border-box;
-  width: 89px;
-  height: 20px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20.11px;
-  color: rgb(47, 205, 112);
-  white-space: nowrap;
-}
-
-.download-interested-in-working-together-download-my-cv-12 {
-  box-sizing: border-box;
-  position: absolute;
-  left: 50px;
-  top: 157px;
-  width: 716px;
-  height: 120px;
-  margin: 0;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 60px;
-  color: rgb(255, 255, 255);
-  white-space: nowrap;
+@media (prefers-reduced-motion: reduce) {
+  .download-dot-motion {
+    animation: none;
+  }
 }
